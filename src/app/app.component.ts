@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 @Component({
   selector: 'app-root',
@@ -8,6 +12,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 })
 export class AppComponent {
   title = 'landing-page';
+
+
   public form: FormGroup = new FormGroup<any>({
     'name': new FormControl('', [Validators.required]),
     'email': new FormControl('', [Validators.email]),
