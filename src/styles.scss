@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply bg-gray-50/70
+}
+
+a {
+  @apply text-red-500 no-underline;
+}
+
+.form-group {
+  @apply text-left;
+  label {
+    @apply block mb-2
+  }
+  input {
+    @apply py-2 px-4 block w-full border border-gray-200 rounded mb-4 outline-0 focus:border-amit;
+  }
+}
+
+.dbg {
+  background: transparent url('http://d9hhrg4mnvzow.cloudfront.net/unbouncepages.com/mediclick-alt/medical-bg.original.jpg') scroll;
+  background-size: cover;
+}
+
+.wrapper {
+  @apply container max-w-[900px]
+}
+
+.box {
+  @apply p-4 bg-white shadow-lg rounded border border-gray-100 shadow-gray-100/50 text-center;
+  h3 {
+    @apply uppercase font-bold text-amit leading-6;
+  }
+  img {
+    @apply w-[120px] m-auto;
+  }
+}
+
+.testimonial {
+}
+
+control-error {
+  @apply text-sm text-red-500 -mt-3;
+}
+
+.line {
+  @apply hidden md:block;
+}
