@@ -32,6 +32,7 @@ export class AppComponent {
     this.httpClient.post('submit.php', this.form.value).subscribe(r => {
       alert('Your details have been submitted.We will get back to you soon');
       this.form.reset();
+      this.form.markAsPristine()
     })
 
   }
