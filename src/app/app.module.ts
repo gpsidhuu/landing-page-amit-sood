@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { errorTailorImports, FormActionDirective, provideErrorTailorConfig } from "@ngneat/error-tailor";
 import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ReactiveFormsModule } from "@angular/forms";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormActionDirective, errorTailorImports,
@@ -21,6 +23,7 @@ import { ReactiveFormsModule } from "@angular/forms";
       errors: {
         useValue: {
           required: 'This field is required',
+          email: 'Invalid Email Address',
           minlength: ({ requiredLength, actualLength }) =>
             `Expect ${requiredLength} but got ${actualLength}`,
           invalidAddress: error => `Address isn't valid`,

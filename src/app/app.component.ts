@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
+import { HttpClient } from "@angular/common/http";
 // register Swiper custom elements
 register();
 
@@ -12,7 +13,9 @@ register();
 })
 export class AppComponent {
   title = 'landing-page';
+  @ViewChild('f') public f?: HTMLFormElement;
 
+  constructor(public httpClient: HttpClient) {}
 
   public form: FormGroup = new FormGroup<any>({
     'name': new FormControl('', [Validators.required]),
@@ -25,5 +28,11 @@ export class AppComponent {
       this.form.markAllAsTouched();
       return;
     }
+
+    this.httpClient.post('submit.php', this.form.value).subscribe(r => {
+      alert('Your details have been submitted.We will get back to you soon');
+      this.form.reset();
+    })
+
   }
 }
