@@ -19,7 +19,9 @@ export class AppComponent {
 
   public form: FormGroup = new FormGroup<any>({
     'name': new FormControl('', [Validators.required]),
-    'email': new FormControl('', [Validators.email]),
+    'age': new FormControl('', [Validators.required]),
+    'weight': new FormControl('', [Validators.required]),
+    'height': new FormControl('', [Validators.required]),
     'phone': new FormControl('', [Validators.required]),
   })
 

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { errorTailorImports, FormActionDirective, provideErrorTailorConfig } from "@ngneat/error-tailor";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { KeyFilterModule } from "primeng/keyfilter";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormActionDirective, errorTailorImports,
+    FormActionDirective, errorTailorImports, KeyFilterModule,
   ], schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     provideErrorTailorConfig({
